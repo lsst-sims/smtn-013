@@ -53,6 +53,51 @@
 .. Add content here.
 .. Do not include the document title (it's automatically added from metadata.yaml).
 
+Introduction
+============
+
+In this tech note we discuss science metrics for two types of transient objects, fast microlensing events and tidal disruption events (TDEs).
+
+Code for running these metrics and generating the plots in this note are in a jupyter notebook microlensing_and_tde_metrics.ipynb xxx-link to github.
+
+
+
+Tidal Disruption Events
+=======================
+
+.. figure:: /_static/tde_lc.png
+   :name: fig-tde_lc
+
+   Example light curve shapes used for TDEs. 
+
+
+
+
+Microlensing
+============
+
+
+.. figure:: /_static/microlensing_lc.png
+   :name: fig-microlensing_lc
+
+   Example light curve shapes used for TDEs. 
+
+
+Extending to Other Populations
+==============================
+
+These can be used as a templates for writing metrics for other transient populations. To write a new transient population
+
+- Write a slicer generator that makes a population of transients with the proper spatial distribution and distribution of transient properties. For example, xxx-add link generateMicrolensingSlicer distributes microlensing events distributed proportionally to 
+- 
+
+
+
+
+
+
+
+
 .. .. rubric:: References
 
 .. Make in-text citations with: :cite:`bibkey`.
