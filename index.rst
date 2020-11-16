@@ -62,7 +62,7 @@ Code for running these metrics and generating the plots in this note are in a ju
 
 xxx-are we applying dust to TDEs?
 
-For both of these metrics, we will compare their performance on two different simulatied surveys, baseline_nexp2_v1_6 and combo_dust_nexp2_v1_6. The main diffference between these simulations is combo_dust_nexp2_v1_6 avoids dusty regions of the galactic plane and covers the bulge as part of the wide-fast-deep survey.
+For both of these metrics, we will compare their performance on two different simulatied surveys, `baseline_nexp2_v1_6` and `combo_dust_nexp2_v1_6`. The main diffference between these simulations is `combo_dust_nexp2_v1_6` avoids dusty regions of the galactic plane and covers the bulge as part of the wide-fast-deep survey.
 
 .. image:: /_static/thumb.baseline_nexp2_v1_6_10yrs_CoaddM5_r_and_note_not_like_DD_HEAL_SkyMap.png
    :width: 49%
