@@ -122,7 +122,7 @@ Microlensing events are generated with a crossing times drawn uniformly from 1 t
 xxx---the criteria for detecting a microlensing event:  
 2 points detected before maximum, and 2 points detected post maximum. 
 
-By default, we assume the lensed object is an r=20 point source (flat SED) and demand that the amplification be detected at the 3-sigma level, e.g., a point on the light curve must have sufficient SNR to be detected at the catalog level as amplified from a previous observation at the 3-sigma level. 
+By default, we assume the lensed object is an r=20 point source (flat SED) and demand that the amplification be detected at the 3-sigma level, e.g., a point on the light curve must have sufficient SNR to be detected at the catalog level as amplified from any previous observation at the 3-sigma level (e.g. XXX ). 
 
 
 .. figure:: /_static/microlensing_lc.png
