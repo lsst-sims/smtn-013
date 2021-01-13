@@ -58,9 +58,9 @@ Introduction
 
 In this tech note we discuss science metrics for two types of transient objects, fast microlensing events and tidal disruption events (TDEs).
 
-Code for running these metrics and generating the plots in this note are in a jupyter notebook microlensing_and_tde_metrics.ipynb xxx-link to github.
+Code for running these metrics and generating the plots in this note are in a `jupyter notebook <https://github.com/lsst-sims/smtn-013/microlensing_and_tde_metrics.ipynb>`__.
 
-xxx-are we applying dust to TDEs?
+xxx-are we applying dust to TDEs?--yes!
 
 For both of these metrics, we will compare their performance on two different simulatied surveys, `baseline_nexp2_v1_6` and `combo_dust_nexp2_v1_6`. The main diffference between these simulations is `combo_dust_nexp2_v1_6` avoids dusty regions of the galactic plane and covers the bulge as part of the wide-fast-deep survey.
 
@@ -82,18 +82,47 @@ Tidal Disruption Events
 
    Example light curve shapes used for TDEs. 
 
+XXX--we generate a population of TDEs with properties drawn from XXX.
+
+We apply dust extinction to the generated magnitudes and test three different detection criteria:
+
+#. pre-peak: 
+#. some color:
+#. some color plus u:
+
+
+.. image:: /_static/tde_input.png
+   :width: 33%
+.. image:: /_static/thumb.baseline_nexp2_v1_6_10yrs_TDEsPopMetric_prepeak_USER_SkyMap.png
+   :width: 33%
+.. image:: /_static/thumb.combo_dust_nexp2_v1_6_10yrs_TDEsPopMetric_prepeak_USER_SkyMap.png
+   :width: 33%
+
+The left shows the locations of simulated TDE events. The middle and right panels show the events that meet the pre-peak detection criteria. There is minimal difference between the two simulations, with 24% being detected in the baseline and 25% being detected in combo_dust.
+
+
+
+.. image:: /_static/tde_input.png
+   :width: 33%
+.. image:: /_static/thumb.baseline_nexp2_v1_6_10yrs_TDEsPopMetric_some_color_pu_USER_SkyMap.png
+   :width: 33%
+.. image:: /_static/thumb.combo_dust_nexp2_v1_6_10yrs_TDEsPopMetric_some_color_pu_USER_SkyMap.png
+   :width: 33%
+
+Like before, only now showing the input population and the events that meet the most stringent detection criteria. The baseline detects 2% and combo_dust detects 1.97% of the TDE events.
 
 
 
 Microlensing
 ============
 
-Microlensing events are generated with a crossing times drawn uniformly from 1 to 10 days, and impact parameters drawn from 0 to 1, and distributed on the sky 
-
+Microlensing events are generated with a crossing times drawn uniformly from 1 to 10 days, and impact parameters drawn from 0 to 1, and distributed on the sky proportionally to the stellar density squared. We use TRIlegal Milky Way model to estimate the stellar density, including the LMC and SMC.  By default, an r=22 magniude star is assumed to be the lensed source.
 
 
 xxx---the criteria for detecting a microlensing event:  
-2 points detected before maximum, and 2 points detected post maximum. By default, we assume the lensed object is an r=20 point source (flat SED) and demand that the amplification be detected at the 3-sigma level, e.g., a point on the light curve must have sufficient SNR to be detected at the catalog level as amplified from a previous observation at the 3-sigma level. 
+2 points detected before maximum, and 2 points detected post maximum. 
+
+By default, we assume the lensed object is an r=20 point source (flat SED) and demand that the amplification be detected at the 3-sigma level, e.g., a point on the light curve must have sufficient SNR to be detected at the catalog level as amplified from a previous observation at the 3-sigma level. 
 
 
 .. figure:: /_static/microlensing_lc.png
@@ -116,8 +145,9 @@ The images above show the input microlensing events along with the recovered eve
 Extending to Other Populations
 ==============================
 
-These transient metrics can be used as a templates for writing metrics for other transient populations. The basic steps for any transient metric are to 1) Generate a population of transients, 2) Define a criteria for a transient to be "detected" (and/or well-detected), 3) Use MAF to generate the expected observed light curves and check to see what fraction meet the detection criteria.
+These transient metrics can be used as a templates for writing metrics for other transient populations. The basic steps for any transient metric are to 1) Generate a population of transients, 2) Define a criteria for a transient to be "detected" (and/or well-detected), 3) Use MAF and a simulated observing strategy to generate the observed light curves and check to see what fraction meet the detection criteria.
 
+The source for the `TDE metric <https://github.com/LSST-nonproject/sims_maf_contrib/blob/master/mafContrib/TDEsPopMetric.py>`__ and `Microlensing metric <https://github.com/LSST-nonproject/sims_maf_contrib/blob/master/mafContrib/microlensingMetric.py>`__ are in the sims_maf_contrib repo.
 
 
 
